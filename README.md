@@ -203,6 +203,104 @@ CREATE TABLE claimed_offers (
 - Network error handling
 - Database constraint violation handling
 
+## Project Structure
+
+```
+PayPerks/
+├── frontend/                 # React frontend application
+│   ├── public/              # Public assets and index.html
+│   ├── src/                 # Source code
+│   │   ├── components/      # Reusable React components
+│   │   ├── pages/          # Page components (Login, Dashboard, etc.)
+│   │   ├── services/       # API integration services
+│   │   ├── styles/         # CSS modules and style utilities
+│   │   ├── App.js          # Main application component
+│   │   └── index.js        # Application entry point
+│   ├── package.json        # Frontend dependencies and scripts
+│   └── package-lock.json   # Locked versions of dependencies
+│
+├── backend/                 # Spring Boot backend application
+│   ├── src/
+│   │   └── main/
+│   │       ├── java/com/payperks/
+│   │       │   ├── config/         # Configuration classes (CORS, Security)
+│   │       │   ├── controller/     # REST API endpoints
+│   │       │   ├── service/        # Business logic layer
+│   │       │   ├── dao/           # Data Access Objects
+│   │       │   ├── model/         # Entity classes
+│   │       │   └── PayPerksApplication.java  # Main application class
+│   │       └── resources/
+│   │           ├── application.properties    # Application configuration
+│   │           └── schema.sql               # Database schema
+│   ├── pom.xml             # Backend dependencies and build config
+│   ├── cards_data.sql      # Initial cards data for database
+│   └── new_offers.sql      # Initial offers data for database
+│
+└── README.md               # Project documentation
+```
+
+### Frontend Directory Structure Explanation
+
+- `public/`: Contains static files that are served directly
+- `src/components/`: Reusable UI components like buttons, cards, and forms
+- `src/pages/`: Individual page components with their specific logic
+- `src/services/`: API integration layer for backend communication
+- `src/styles/`: CSS files for styling components and pages
+- `src/App.js`: Main component that handles routing and layout
+- `src/index.js`: Entry point that renders the React application
+
+### Backend Directory Structure Explanation
+
+- `config/`: Configuration classes for:
+  - CORS settings
+  - Security configuration
+  - Database configuration
+  - Other application-wide settings
+
+- `controller/`: REST API endpoints that:
+  - Handle HTTP requests
+  - Validate input
+  - Delegate to services
+  - Return appropriate responses
+
+- `service/`: Business logic layer that:
+  - Implements core functionality
+  - Handles transactions
+  - Coordinates between controllers and DAOs
+  - Implements validation rules
+
+- `dao/`: Data Access Objects that:
+  - Handle database operations
+  - Implement CRUD operations
+  - Map database results to entities
+
+- `model/`: Entity classes that:
+  - Define data structure
+  - Map to database tables
+  - Include validation annotations
+
+### Database Files
+
+- `cards_data.sql`: Contains initial seed data for available credit/debit cards
+- `new_offers.sql`: Contains seed data for card offers
+- `schema.sql`: Defines the database schema with all tables and relationships
+
+### Configuration Files
+
+- `application.properties`: Contains:
+  - Database connection settings
+  - Server configuration
+  - Logging settings
+  - Other application properties
+
+- `pom.xml`: Maven configuration file that:
+  - Defines project dependencies
+  - Configures build process
+  - Sets up plugins and build lifecycle
+
+This structure follows standard practices for full-stack applications, separating concerns between frontend and backend while maintaining a clear and organized codebase.
+
+
 ## Future Enhancements
 
 - Email verification
