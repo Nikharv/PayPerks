@@ -300,7 +300,6 @@ PayPerks/
 
 This structure follows standard practices for full-stack applications, separating concerns between frontend and backend while maintaining a clear and organized codebase.
 
-
 ## Future Enhancements
 
 - Email verification
