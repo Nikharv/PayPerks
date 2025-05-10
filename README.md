@@ -187,22 +187,12 @@ CREATE TABLE claimed_offers (
 
 ## Security Features
 
-- Password hashing for user credentials
 - Session management
 - CORS configuration
 - Input validation
 - SQL injection prevention
 - Foreign key constraints
 - Unique constraints to prevent duplicate claims
-
-## Mobile Responsiveness
-
-The application is designed with a mobile-first approach and includes:
-- Responsive grid layouts
-- Touch-friendly interface
-- Adaptive typography
-- Flexible images and media
-- Breakpoints for various screen sizes
 
 ## Error Handling
 
@@ -223,15 +213,3 @@ The application is designed with a mobile-first approach and includes:
 - Offer recommendations
 - Analytics dashboard
 - Export claimed offers history
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details. 
